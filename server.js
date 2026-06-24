@@ -1,15 +1,14 @@
 const express = require("express");
 const app = express();
-const port = 4040;
+const port = 5100;
 const data = require("./data");
-
 const employeeRoutes = require("./routes/employeeRoutes");
-
+const cors =require("cors")
 const loggerMiddleware = require("./middleware/loggerMiddleware");
 
 
 // Middleware
-
+app.use(cors())
 app.use(express.json());
 
 app.use(loggerMiddleware);
